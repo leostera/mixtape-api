@@ -1,17 +1,17 @@
 ERL ?= erl
 APP := mixtape
 
-.PHONY: deps clean distclean docs start
+.PHONY: clean distclean docs start install
 
-all: deps
+all:
 	@./rebar compile
-	@echo "App built \n"
+	@echo "App built\n"
 
-start: deps
-	@./start.sh
-
-deps:
+install: 
 	@./rebar get-deps
+
+start: install
+	@./start.sh
 
 clean:
 	@./rebar clean

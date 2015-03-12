@@ -8,7 +8,7 @@
 -spec dispatch() -> [webmachine_dispatcher:route()].
 dispatch() ->
     lists:flatten([
-        {[], mixtape_resource, []}
+        {["tape"], tape_resource, []}
     ]).
 
 web_config() ->
